@@ -56,7 +56,7 @@ const Add = () => {
                 </label>
                 <input onChange={(e)=>setImage(e.target.files[0])} type="file" id='image' hidden required />
             </div>
-            <div className="add-product-upload flex-col">
+            <div className="add-product-name flex-col">
                 <p>Product Name</p>
                 <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Type Here'/>
             </div>
