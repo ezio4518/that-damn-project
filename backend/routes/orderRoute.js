@@ -1,8 +1,8 @@
 import express from 'express';
-import authMiddleware from '../middlewares/authMiddleware.js';
+import authMiddleware from '../middlewares/auth.js';
 import { listOrders, placeOrder, userOrders, verifyOrder, updateStatus } from '../controllers/orderController.js';
 
-const oerderRouter = express.Router();
+const orderRouter = express.Router();
 
 orderRouter.post('/place', authMiddleware, placeOrder);
 orderRouter.post("/verify",verifyOrder);
