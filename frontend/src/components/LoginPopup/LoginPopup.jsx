@@ -26,10 +26,10 @@ const LoginPopup = ({setShowLogin}) => {
     let newUrl = url;
 
     if(currState==='Login'){
-      newUrl += "api/user/login";
+      newUrl += "/api/user/login";
     }
     else {
-      newUrl += "api/user/register";
+      newUrl += "/api/user/register";
     }
 
     const response = await axios.post(newUrl,data);
@@ -55,7 +55,7 @@ const LoginPopup = ({setShowLogin}) => {
         <div className="login-popup-inputs">
           {currState==='Login'?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required/>}
           <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required/>
-          <input name='name' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required/>
+          <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required/>
         </div>
         <button type='submit' >{currState==='Sign Up'?"Create Account":"Login"}</button>
         <div className="login-popup-condition">
