@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { assets } from '../../assets/assets'
 import './Add.css'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
+import { assets } from '../../assets/assets'
+
+
 
 const Add = ({url}) => {
 
@@ -11,7 +13,7 @@ const Add = ({url}) => {
         name: '',
         description:'',
         price:'',
-        category:'Salad',
+        category:'Select',
     });
 
     const onChangeHandler = (event) => {
@@ -29,13 +31,13 @@ const Add = ({url}) => {
         formData.append('category', data.category);
         formData.append('image', image);
 
-        const response = await axios.post(`${url}/api/food/add`, formData);
+        const response = await axios.post(`${url}/api/product/add`, formData);
         if(response.data.success){
             setData({
                 name: '',
                 description:'',
                 price:'',
-                category:'Salad',
+                category:'Select',
             })
             setImage(false);
             toast.success(response.data.message);
@@ -66,20 +68,21 @@ const Add = ({url}) => {
             <div className="add-category-price">
                 <div className="add-category flex-col">
                     <p>Product Category</p>
-                    <select onChange={onChangeHandler} name="category" >
-                        <option value="Salad">Salad</option>
-                        <option value="RollsDeserts">RollsDeserts</option>
-                        <option value="Deserts">Deserts</option>
-                        <option value="Sandwich">Sandwich</option>
-                        <option value="Cake">Cake</option>
-                        <option value="Pure Veg">Pure Veg</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Noodles">Noodles</option>
+                    <select onChange={onChangeHandler} value={data.category} name="category" >
+                        <option value="Select">Select</option>
+                        <option value="Sofa Sets">Sofa Sets</option>
+                        <option value="Beds">Beds</option>
+                        <option value="Dining Tables">Dining Tables</option>
+                        <option value="Sofa Cum Beds">Sofa Cum Beds</option>
+                        <option value="Book Shelves">Book Shelves</option>
+                        <option value="Study Tables">Study Tables</option>
+                        <option value="Home Decor">Home Decor</option>
+                        <option value="TV Units">TV Units</option>
                     </select>
                 </div>
                 <div className="add-price flex-col">
                     <p>Product price</p>
-                    <input onChange={onChangeHandler} value={data.price} type="number" name='price' placeholder='$20' />
+                    <input onChange={onChangeHandler} value={data.price} type="number" name='price' placeholder='₹ 20' />
                 </div>
             </div>
             <button type='submit' className='add-btn'>ADD</button>

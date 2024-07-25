@@ -25,6 +25,13 @@
     cursor: pointer;
 }
 
+.sidebar-option .icon{
+    font-size: 30px;
+}
+.sidebar-option .icon-new{
+    font-size: 24px;
+}
+
 .sidebar-option.active{
     background-color: #fff0ed;
     border-color: tomato;

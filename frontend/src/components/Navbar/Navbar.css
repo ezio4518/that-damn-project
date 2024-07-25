@@ -7,7 +7,7 @@
 .navbar .logo{
     width: 150px;
 }
-.navbar-menu{
+.navbar-products{
     display: flex;
     list-style: none;
     gap: 20px;
@@ -44,17 +44,27 @@
 .navbar-search-icon{
     position: relative;
 }
+.navbar-search-icon .cart-icon {
+    font-size: 30px;
+    color: #49557E;
+}
+
 .navbar-search-icon .dot{
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 8px;
+    min-height: 8px;
     background-color: tomato;
-    border-radius: 5px;
+    border-radius: 4px;
     top: -8px;
     right: -8px;
 }
 .navbar-profile{
     position: relative;
+}
+.navbar-profile .profile-icon {
+    font-size: 36px;
+    color: #49557E;
+    transform: translateY(1px);
 }
 .nav-profile-dropdown{
     position: absolute;
